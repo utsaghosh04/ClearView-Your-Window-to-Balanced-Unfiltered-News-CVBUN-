@@ -7,10 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 dist
 dist-ssr
 *.local
+
+# Build output
+.vite
+out/
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +27,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Virtual Environment
+.venv/
+__pycache__/
+*.py[cod]
+
+# Lockfiles (if using yarn or pnpm)
+yarn.lock
+pnpm-lock.yaml
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
