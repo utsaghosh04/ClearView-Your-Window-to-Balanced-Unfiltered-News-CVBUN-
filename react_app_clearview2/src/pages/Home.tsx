@@ -135,14 +135,14 @@ const Home = () => {
 
   const categories = [
     'Politics', 'Business', 'Technology', 'Science', 'Health', 
-    'Sports', 'Entertainment', 'World', 'Environment', 'Education'
+    'Sports', 'Entertainment', 'World', 'Environment', 'Education', 'General'
   ];
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/articles');
+        const response = await fetch('http://127.0.0.1:5000/news');
         const data = await response.json();
         
         setArticles(data);
