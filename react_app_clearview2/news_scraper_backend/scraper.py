@@ -51,7 +51,7 @@ import datetime
 import uuid
 
 # MongoDB Connection
-MONGO_URI = "mongodb+srv://utsaghosh2004:<db_password>@clearview.rto5w.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
+MONGO_URI = "mongodb://localhost:27017"
 client = MongoClient(MONGO_URI)
 db = client["news_db"]
 collection = db["articles"]
@@ -130,8 +130,8 @@ def scrape_articles():
             "_id": str(uuid.uuid4()),
             "id": str(uuid.uuid4()),
             "title": title,
-            "description": details.get("description", ""),
-            "content": details.get("content", ""),
+            "description": details.get("description", "No description available"),
+            "content": details.get("content", "No content available"),
             "author": details.get("author", "BBC News"),
             "source": "BBC News",
             "url": full_url,

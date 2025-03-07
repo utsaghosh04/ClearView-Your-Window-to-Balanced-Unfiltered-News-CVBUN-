@@ -4,7 +4,7 @@ import uuid
 from pymongo import MongoClient
 
 # 🔹 MongoDB Connection
-MONGO_URI = "mongodb+srv://utsaghosh2004:uFINaj3Fdrg0q8ai@clearview.rto5w.mongodb.net/?retryWrites=true&w=majority&appName=ClearView&tls=true"
+MONGO_URI = "mongodb://localhost:27017/"
 client = MongoClient(MONGO_URI)
 db = client["news_db"]
 collection = db["articles"]
@@ -19,7 +19,7 @@ def fetch_news():
         "apiKey": API_KEY,
         "language": "en",
         "country": "us",
-        "pageSize": 10  # Adjust the number of articles
+        "pageSize": 16  # Adjust the number of articles
     }
 
     response = requests.get(BASE_URL, params=params)
