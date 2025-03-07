@@ -36,7 +36,8 @@
 # if __name__ == "__main__":
 #     app.run(debug=True)
 from flask import Flask, jsonify
-from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 from flask_cors import CORS
 from bson import ObjectId
 import datetime
@@ -44,9 +45,15 @@ import datetime
 app = Flask(__name__)
 CORS(app)  # Enable CORS to allow frontend access
 
-# MongoDB Connection
-MONGO_URI = "mongodb+srv://siddhantsingh:5RhPCpEZG0uOEW2A@clearview.watxj.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
-client = MongoClient(MONGO_URI)
+uri = "mongodb+srv://siddhantsingh:5RhPCpEZG0uOEW2A@clearview.watxj.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
 db = client["news_db"]
 collection = db["articles"]
 
@@ -73,6 +80,8 @@ def get_news():
             'likes': article.get('likes', 0),
             'comments': article.get('comments', [])
         })
+    for article in formatted_articles:
+        print(article['description'])
 
     return jsonify(formatted_articles)
 

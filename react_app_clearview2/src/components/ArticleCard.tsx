@@ -46,7 +46,11 @@ const ArticleCard = ({ article, onLike, onShare }: ArticleCardProps) => {
           </h2>
         </Link>
         <p className="text-secondary-600 mb-4">
-          {isExpanded ? article.description : `${article.description.substring(0, 150)}...`}
+          {isExpanded
+            ? article.description 
+            : article.description 
+              ? `${article.description.slice(0, 150)}${article.description.length > 150 ? '...' : ''}` 
+              : "No description available"}
           {article.description.length > 150 && (
             <button 
               onClick={toggleExpand} 
