@@ -4,7 +4,7 @@ import uuid
 from pymongo import MongoClient
 
 # 🔹 MongoDB Connection
-MONGO_URI = "mongodb+srv://siddhantsingh:5RhPCpEZG0uOEW2A@clearview.watxj.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
+MONGO_URI = "mongodb+srv://utsaghosh2004:uFINaj3Fdrg0q8ai@clearview.rto5w.mongodb.net/?retryWrites=true&w=majority&appName=ClearView&tls=true"
 client = MongoClient(MONGO_URI)
 db = client["news_db"]
 collection = db["articles"]

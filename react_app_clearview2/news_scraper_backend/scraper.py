@@ -51,7 +51,7 @@ import datetime
 import uuid
 
 # MongoDB Connection
-MONGO_URI = "mongodb+srv://siddhantsingh:5RhPCpEZG0uOEW2A@clearview.watxj.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
+MONGO_URI = "mongodb+srv://utsaghosh2004:<db_password>@clearview.rto5w.mongodb.net/?retryWrites=true&w=majority&appName=ClearView"
 client = MongoClient(MONGO_URI)
 db = client["news_db"]
 collection = db["articles"]
