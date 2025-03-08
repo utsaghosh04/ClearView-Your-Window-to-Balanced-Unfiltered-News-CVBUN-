@@ -31,6 +31,15 @@ export interface User {
     likes: number;
     comments: Comment[];
   }
+
+  export interface LeftRightPercentages {
+    id: string;
+    left: number;
+    lean_left: number;
+    center: number;
+    lean_right: number;
+    right: number;
+  }
   
   export interface Comment {
     id: string;

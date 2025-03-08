@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom';
 import { FiThumbsUp, FiMessageSquare, FiShare2 } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { Article } from '../types';
+import { LeftRightPercentages } from '../types';
+import PoliticalLeaningBar from './PoliticalLeaningBar';
 import './ArticleCard.css'
 
 interface ArticleCardProps {
   article: Article;
+  percentage?: LeftRightPercentages;
   onLike: (articleId: string) => void;
   onShare: (articleId: string) => void;
 }
 
-const ArticleCard = ({ article, onLike, onShare }: ArticleCardProps) => {
+const ArticleCard = ({ article, percentage, onLike, onShare }: ArticleCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -19,7 +22,7 @@ const ArticleCard = ({ article, onLike, onShare }: ArticleCardProps) => {
   };
 
   return (
-    <div className="card mb-6">
+    <div className="card mb-6 w-full">
       {article.imageUrl && (
         <div className="relative h-48 overflow-hidden">
           <img 
@@ -60,6 +63,22 @@ const ArticleCard = ({ article, onLike, onShare }: ArticleCardProps) => {
             </button>
           )}
         </p>
+
+        {/* Political Leaning Bar */}
+        {percentage && (
+            <div className="mt-2 w-full">
+              <PoliticalLeaningBar
+                data = {{
+                  "#003366": (percentage.left / 100) || 0,
+                  "#0074D9": (percentage.lean_left / 100) || 0,
+                  "#A0AEC0": (percentage.center / 100) || 0,
+                  "#FF6B6B": (percentage.lean_right / 100) || 0,
+                  "#8B0000": (percentage.right / 100) || 0
+                }}
+              />
+            </div>
+        )}
+
         <div className="flex items-center text-secondary-500 text-sm">
           <div className="flex items-center mr-4">
             <button 

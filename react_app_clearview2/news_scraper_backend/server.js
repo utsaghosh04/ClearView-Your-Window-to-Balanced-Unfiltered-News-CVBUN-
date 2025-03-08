@@ -71,6 +71,25 @@ app.get("/news", async (req, res) => {
   }
 });
 
+// POST: Like an Article
+app.post("/api/articles/:id/like", async (req, res) => {
+  try {
+    const article = await Article.findOne({ id: req.params.id });
+    
+    if (!article) {
+      return res.status(404).json({ error: "Article not found" });
+    }
+    
+    article.likes = (article.likes || 0) + 1;
+    await article.save();
+    
+    res.json(article);
+  } catch (error) {
+    console.error("Error liking article:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 // Start Server
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -3,3 +3,11 @@ flask
 flask_cors
 requests
 bs4
+pandas
+transformers
+datasets
+torch
+transformers[torch]
+torchvision
+torchaudio
+scikit-learn

@@ -76,7 +76,8 @@ function App() {
               <Route path="/preferences" element={<Preferences />} />
               <Route path="/subscription" element={<Subscription />} />
               <Route path="/usage" element={<Usage />} />
-              <Route path="/news" element={<NewsList />} />  {/* ✅ Add NewsList Route */}
+              <Route path="/news" element={<NewsList />} />  {/* Add NewsList Route */}
+              <Route path="/analyse" element={<Home />} />  {/* Add Bias Route */}
             </Routes>
           </main>
           <footer className="bg-white border-t border-secondary-200 py-8">

@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependencies
-node_modules
+node_modules/
 dist
 dist-ssr
 *.local
@@ -43,3 +43,25 @@ pnpm-lock.yaml
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Hugging Face models & checkpoints
+results/
+*.bin
+*.pt
+*.h5
+
+# Pretrained & fine-tuned models
+fine_tuned_roberta/
+~/.cache/huggingface/
+~/.cache/datasets/
+
+# Tokenizer cache
+tokenizer.json
+tokenizer_config.json
+
+# ONNX model files
+*.onnx
+
+# Huggingface uploading files and credentials
+left_right_classification_clearview_huggingface_token.txt
+uploading_to_huggingface.py
