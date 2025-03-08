@@ -134,8 +134,8 @@ const Home = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const categories = [
-    'Politics', 'Business', 'Technology', 'Science', 'Health', 
-    'Sports', 'Entertainment', 'World', 'Environment', 'Education', 'General'
+    'Politics', 'Business', 'Tech', 'Science', 'Health', 
+    'Sport', 'Entertainment', 'World', 'Environment', 'Education', 'General'
   ];
 
   useEffect(() => {
