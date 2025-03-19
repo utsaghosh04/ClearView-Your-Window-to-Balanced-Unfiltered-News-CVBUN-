@@ -1,4 +1,4 @@
-/* Card styling */
+/* Card styling
 .card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -79,4 +79,25 @@
   
   .card .content .actions svg {
     margin-right: 4px;
-  }
+  } */
+
+/* We can remove most of this CSS file since we'll be using Tailwind classes directly in the component */
+/* Only keeping some transition styles that might be cleaner to maintain here */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Any specific animations that are complex can stay here */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}

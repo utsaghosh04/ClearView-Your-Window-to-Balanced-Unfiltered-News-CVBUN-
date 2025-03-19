@@ -1,9 +1,7 @@
-/* Container styling */
-.mb-6 {
+/* .mb-6 {
     margin-bottom: 1.5rem;
   }
   
-  /* Typography */
   .text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -17,7 +15,6 @@
     margin-bottom: 0.75rem;
   }
   
-  /* Flexbox styling */
   .flex {
     display: flex;
   }
@@ -30,7 +27,6 @@
     gap: 0.5rem;
   }
   
-  /* Button styling */
   button {
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
@@ -89,4 +85,4 @@
   
   .hover\:bg-secondary-50:hover {
     background-color: #f9fafb;
-  }
+  } */

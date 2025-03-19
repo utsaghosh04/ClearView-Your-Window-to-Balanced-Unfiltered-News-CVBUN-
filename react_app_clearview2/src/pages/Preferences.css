@@ -1,5 +1,4 @@
-/* General container styling */
-.max-w-4xl {
+/* .max-w-4xl {
     max-width: 64rem;
     margin: 0 auto;
   }
@@ -29,7 +28,6 @@
     padding-bottom: 2rem;
   }
   
-  /* Typography */
   .text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -202,7 +200,6 @@
     margin-right: 1rem;
   }
   
-  /* Button styling */
   .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -233,4 +230,4 @@
   
   .disabled\:opacity-50:disabled {
     opacity: 0.5;
-  }
+  } */
