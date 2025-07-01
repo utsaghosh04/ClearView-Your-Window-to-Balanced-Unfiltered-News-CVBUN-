@@ -10,7 +10,7 @@ db = client["news_db"]
 collection = db["articles"]
 
 # 🔹 NewsAPI Setup
-API_KEY = "74060afc388e4b7fbf5e0f99f1ab03c9"  # Replace with your actual API key
+API_KEY = "                                   "  # Replace with your actual API key
 BASE_URL = "https://newsapi.org/v2/top-headlines"
 
 def fetch_news():
