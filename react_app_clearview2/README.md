@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+You need to put your actual mongodb API keys in news_scraper_backend/news_api_scraper.py.
